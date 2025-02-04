@@ -48,27 +48,33 @@ print(f'Now my basket is empty: {basket_list}')
 
 list = []
 for i in range(1,6):
-    list.append(i)
-    list.append(i + 0.5)
+    if i == 1:
+        list.append(i + 0.5)
+    else:
+        list.append(i)
+        list.append(i + 0.5)
 list.pop()    
 print(list)
 
 list = []
-for i in range(1,6):
-   list.append(i)
-   if i < 5:
+for i in range(1, 6):
+    list.append(i)
+    if i < 5:
         list.append(i + 0.5)
+list = list[1:]
 print(list)
 
 # Exercise5
 
-for i in range(1,21):
-    print(i)
+numbers_list = []
+for number in range(1,21):
+    numbers_list.append(number)
+print(numbers_list)
 
-print('Even numbers in the range:')
-for i in range(1,21):
-    if i % 2 == 0:
-        print(i)
+print('Numbers with even indexes in the range:')
+for index, number in enumerate(numbers_list):
+    if index % 2 == 0:
+        print(number)
 
 # Exercise6
 
