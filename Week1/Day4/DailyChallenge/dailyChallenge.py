@@ -18,20 +18,21 @@ sM
 $a 
 #t%
 ^r!'''
-matrix = []
 
+matrix = []
 
 rows = matrix_string.split('\n')
 print(rows)
 
 for row in rows:
-    matrix.append(list(row))
+    matrix_row = list(row)
+    matrix.append(matrix_row)
 print(matrix)
 
 alpha = ''
-for col in range(0,3):
-    for line in matrix:
-        letter = line[col]
+for col in range(len(matrix_row)):
+    for matrix_row in matrix:
+        letter = matrix_row[col]
         if letter.isalpha():
             alpha += letter
         else:
