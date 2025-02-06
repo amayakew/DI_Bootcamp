@@ -30,8 +30,8 @@ print(matrix)
 
 alpha = ''
 for col in range(0,3):
-    for row in matrix:
-        letter = row[col]
+    for line in matrix:
+        letter = line[col]
         if letter.isalpha():
             alpha += letter
         else:
