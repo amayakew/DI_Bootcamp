@@ -46,13 +46,30 @@ def game_board():
             board_to_print += inside_border() + '\n' + row_to_print(i) + '\n'
     board_to_print += up_down_border()
     print(board_to_print)
+
+def validate_input(input):
+    try:
+        input_int = int(input)
+        if input_int < 0 or input_int >= len(board):
+            print(f'Please select values between 0 and {len(board) - 1}')
+            return False
+    except Exception as e:
+        print('Invalid input format')
+        return False
     
+    return True
 
 def player_input(player):
     print(f"Player {player}'s turn: ")
     
-    row_number = int(input('Enter row: '))
-    column_number = int(input('Enter column: '))
+    row_number = input('Enter row: ')
+    column_number = input('Enter column: ')
+
+    if not validate_input(row_number) or not validate_input(column_number):
+        return player_input(player)
+    
+    row_number = int(row_number)
+    column_number = int(column_number)
     if board[row_number][column_number] == ' ':
         board[row_number][column_number] = player
     else:
@@ -121,29 +138,3 @@ def play():
             break
 
 play()
-
-
-
-
-
-
-'''Create a TicTacToe game in python, where two users can play together.
-
-Instructions
-The game is played on a grid that’s 3 squares by 3 squares.
-Players take turns putting their marks (O or X) in empty squares.
-The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner.
-When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
-
-Hint
-To do this project, you basically need to create four functions:
-display_board() – To display the Tic Tac Toe board (GUI).
-player_input(player) – To get the position from the player.
-check_win() – To check whether there is a winner or not.
-play() – The main function, which calls all the functions created above.
-Note: The 4 functions above are just an example. You can implement many more helper functions or choose a completely different appoach if you want.
-
-Tips : Consider the following
-What functionality will need to accur every turn to make this program work?
-After contemplating the question above, think about splitting your code into smaller pieces (functions).
-Remember to follow the single responsibility principle! each function should do one thing and do it well!'''
