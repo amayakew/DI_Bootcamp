@@ -1,3 +1,4 @@
 -- SELECT COUNT(*) FROM actors
 -- INSERT INTO actors(first_name,last_name,birthdate,number_oscars) VALUES ('Demi','Moore','','')
--- > syntax error because the type of this data NOT NULL
+-- > syntax error because it's impossible to set '' to the field with type smallint or date, 
+-- if '' in the field with type varchar - will be just empty space
