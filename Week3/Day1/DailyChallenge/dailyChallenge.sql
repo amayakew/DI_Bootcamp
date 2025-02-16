@@ -1,0 +1,3 @@
+-- SELECT COUNT(*) FROM actors
+-- INSERT INTO actors(first_name,last_name,birthdate,number_oscars) VALUES ('Demi','Moore','','')
+-- > syntax error because the type of this data NOT NULL
