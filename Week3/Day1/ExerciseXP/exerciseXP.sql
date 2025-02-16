@@ -11,11 +11,15 @@
 -- ('Fan', 80)
 
 -- ALTER TABLE items DROP COLUMN item_id;
+-- ALTER TABLE items ADD COLUMN item_id SERIAL PRIMARY KEY
+
 
 -- CREATE TABLE customers(
 -- first_name VARCHAR(50) NOT NULL,
 -- last_name VARCHAR(100) NOT NULL
 -- )
+
+-- ALTER TABLE customers ADD COLUMN customer_id SERIAL PRIMARY KEY
 
 -- INSERT INTO customers (first_name,last_name)
 -- VALUES
