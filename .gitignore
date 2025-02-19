@@ -12,3 +12,4 @@ Week3/Day3/lesson/table_relationships.sql
 .env
 Week3/Day4/lesson/hardcoded_connection.py
 Week3/Day4/lesson/secure_connection.py
+*.pyc
