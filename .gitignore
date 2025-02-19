@@ -1,0 +1,14 @@
+Week3/Day2/ExerciseXP/dvdrental/
+Week3/Day4/lesson/myenv/
+Week3/Day2/DailyChallenge/db.sql
+Week3/Day2/lesson.sql
+Week3/Day3/lesson/delete_on_no_action.sql
+Week3/Day3/lesson/delete_on_set_null.sql
+Week3/Day3/lesson/delete_on_set_default.sql
+Week3/Day3/lesson/delete_on_restrict.sql
+Week3/Day3/lesson/delete_on_cascade.sql
+Week3/Day3/lesson/on_update_cascade.sql
+Week3/Day3/lesson/table_relationships.sql
+.env
+Week3/Day4/lesson/hardcoded_connection.py
+Week3/Day4/lesson/secure_connection.py
