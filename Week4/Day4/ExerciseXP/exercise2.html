@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="firstname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lastname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form> 
+    <ul class="usersAnswer"></ul>
+    <script>
+    //Retrieve the form and console.log it.
+        const f = document.body.firstElementChild;
+        console.log(f);
+    // Retrieve the inputs by their id and console.log them.
+        console.log(document.getElementById('fname'));
+        console.log(document.getElementById('lname'));
+        console.log(document.getElementById('submit'));
+    // Retrieve the inputs by their name attribute and console.log them.
+        console.log(document.getElementsByName('firstname')[0]);
+        console.log(document.getElementsByName('lastname')[0]);
+    // When the user submits the form:
+        // use event.preventDefault(), why ?
+        // get the values of the input tags,
+        // make sure that they are not empty,
+        // create an li per input value,
+        // then append them to a the <ul class="usersAnswer"></ul>, below the form.
+        f.addEventListener('submit', createUl);
+        function createUl(e){
+            e.preventDefault(); 
+            // to change the default behavior of submission (send form data to the server)
+            const inputs = document.querySelectorAll("input");
+            let hasEmpty = false;
+            for (let i = 0; i < inputs.length; i++) {
+                if (inputs[i].value === '') {
+                    hasEmpty = true;
+                    break;
+                }
+            }
+            if (hasEmpty) {
+                alert('Please fill all the inputs');
+            }
+            else {
+                const answersUl = document.getElementsByClassName('usersAnswer')[0];
+                for (let i = 0; i < inputs.length; i++) {
+                    if (inputs[i].getAttribute('id') === 'submit') {
+                        continue;
+                    }
+                    const li = document.createElement('li');
+                    li.innerText = inputs[i].value;
+                    answersUl.appendChild(li);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

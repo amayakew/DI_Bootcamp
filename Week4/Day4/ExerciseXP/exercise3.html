@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+    <strong>end</strong> you <strong>will</strong> be great Developers!
+    <strong>Enjoy</strong> the <strong>JavaScript </strong> lessons</p>
+    <script>
+// Declare a global variable named allBoldItems.
+        let allBoldItems = [];
+// Create a function called getBoldItems() that takes no parameter. This function should collect all the bold items 
+// inside the paragraph and assign them to the allBoldItems variable.
+        function getBoldItems(){
+            const boldTexts = document.getElementsByTagName('strong');
+            for (let i = 0; i < boldTexts.length; i++){
+                allBoldItems.push(boldTexts[i]);
+            }
+        }
+        getBoldItems();
+// Create a function called highlight() that changes the color of all the bold text to blue.
+// Create a function called returnItemsToDefault() that changes the color of all the bold text back to black.
+        function highlight(){
+            allBoldItems.forEach(i => {
+                i.style.color = 'blue';
+            });
+        }
+        function returnItemsToDefault(){
+            allBoldItems.forEach(i => {
+                i.style.color = '';
+            });
+        }
+
+// Call the function highlight() on mouseover (ie. when the mouse pointer is moved onto the paragraph), and the 
+// function returnItemsToDefault() on mouseout (ie. when the mouse pointer is moved out of the paragraph).
+        document.getElementsByTagName('p')[0].addEventListener('mouseover', highlightedText);
+        document.getElementsByTagName('p')[0].addEventListener('mouseout', defaultText);
+
+        function highlightedText(){
+            highlight();
+        }
+        function defaultText(){
+            returnItemsToDefault();
+        }
+    </script>
+</body>
+</html>

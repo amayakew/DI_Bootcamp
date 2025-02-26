@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <h1> Some Facts </h1>
+        <h2> The Chocolate </h2>
+        <h3> History of the chocolate </h3>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p> But what effect does eating chocolate have on our health?</p> 
+    </article>
+    <button>Make text bold</button>
+    <script>
+        // Using a DOM property, retrieve the h1 and console.log it.
+        // Bonus: When you hover on the h1, set the font size to a random pixel size between 0 to 100.
+        const art = document.body.firstElementChild;
+        console.log(art.firstElementChild);
+
+        art.firstElementChild.addEventListener('mouseover',respondHoverH1);
+        function respondHoverH1(){
+            art.firstElementChild.style.fontSize = `${Math.floor(Math.random() * 101)}px`;
+        }
+        // Using DOM methods, remove the last paragraph in the <article> tag.
+        art.removeChild(art.lastElementChild);
+        // Add an event listener which will change the background color of the h2 to red, when it’s clicked on.
+        const secondH = art.firstElementChild.nextElementSibling;
+        secondH.addEventListener('click', respondClickH1);
+        function respondClickH1() {
+            secondH.style.backgroundColor = 'red';
+        }
+        // Add an event listener which will hide the h3 when it’s clicked on (use the display:none property).
+        const thirdH = secondH.nextElementSibling;
+        thirdH.addEventListener('click', respondClickH2);
+        function respondClickH2() {
+            thirdH.style.display = 'none';
+        }
+        // Add a <button> to the HTML file, that when clicked on, should make the text of all the paragraphs, bold.
+        const btn = art.nextElementSibling;
+        btn.addEventListener('click',respondClickBtn);
+        function respondClickBtn(){
+            document.querySelectorAll("p").forEach(p => {
+                p.style.fontWeight = 'bold';
+            });
+        }
+        // BONUS : When you hover on the 2nd paragraph, it should fade out.
+        const p2 = art.children[4];
+        p2.addEventListener('mouseover', respondHoverP2);
+        function respondHoverP2(){
+            let opacity = 1; 
+            let timer = setInterval(function () {
+                if (opacity <= 0) {
+                    clearInterval(timer);
+                    p2.style.display = "none"; 
+                }
+                p2.style.opacity = opacity;
+                opacity -= 0.05; 
+            }, 50);
+        }
+
+    </script>
+</body>
+</html>
