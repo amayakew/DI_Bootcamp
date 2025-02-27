@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+        p {
+          background: yellow;
+          color: red;
+        }
+        </style>
+    </head>
+    <body>
+        <button id="clear">Clear Interval</button>
+        <div id="container"></div>
+        <script>
+    // Part I
+    // using setTimeout, call a function after 2 seconds.
+    // The function will alert “Hello World”.
+            setTimeout(() => {
+                alert('Hello World');
+            }, 2000);
+
+
+    // Part II
+    // using setTimeout, call a function after 2 seconds.
+    // The function will add a new paragraph <p>Hello World</p> to the <div id="container">.
+
+            let paragraphs = [];
+
+            function addP(){
+                let newP = document.createElement('p');
+                newP.innerText = 'Hello World';
+                setTimeout(() => {
+                    document.getElementById('container').appendChild(newP);
+                    paragraphs.push(newP);
+                }, 2000);
+                
+            }
+
+            addP()
+
+    // Part III
+    // using setInterval, call a function every 2 seconds.
+    // The function will add a new paragraph <p>Hello World</p> to the <div id="container">.
+
+        let x = setInterval(addP, 2000);
+
+    // The interval will be cleared (ie. clearInterval), when the user will click on the button.
+
+        const btn = document.getElementById('clear');
+        btn.addEventListener('click', stopAddP)
+
+        function stopAddP() {
+            clearInterval(x);
+        }
+
+    // Instead of clicking on the button, the interval will be cleared (ie. clearInterval) as soon as there will be 
+    // 5 paragraphs inside the <div id="container">.
+
+        // let paragraphs = [];
+
+        // let x = setInterval(function() {
+        //     if (paragraphs.length === 5){
+        //         clearInterval(x);
+        //     }
+        //     else {
+        //         let newP = document.createElement('p');
+        //         newP.innerText = 'Hello World';
+        //         document.getElementById('container').appendChild(newP);
+        //         paragraphs.push(newP);
+        //     }  
+        // }, 2000);
+
+        </script>
+    </body>
+    </html>

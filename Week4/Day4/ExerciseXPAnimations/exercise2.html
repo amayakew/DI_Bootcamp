@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+        #container {
+          width: 400px;
+          height: 400px;
+          position: relative;
+          background: yellow;
+        }
+        #animate {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          background-color: red;
+          top: 0;
+        }
+        </style>
+    </head>
+    <body>
+        <p><button onclick="myMove()">Click Me</button></p>
+        <div id="container">
+          <div id="animate"></div>
+        </div>
+        <script>
+    // use setInterval to move the <div id="animate"> to the right side of the <div id="container">, 
+    // when the button is clicked on.
+    // The <div id="animate"> should move 1px to the right every milisecond, until it reaches the end of the 
+    // <div id="container">.
+        function myMove() {
+            const smallSquare = document.getElementById('animate');
+            const bigSquare = document.getElementById('container');
+            let left = 0
+            let timer = setInterval(function () {
+                if (left >= 350) {
+                    clearInterval(timer);
+                }
+                smallSquare.style.left = `${left}px`;
+                left += 1; 
+            }, 1);
+        }
+    // Hint : use clearInterval as soon as the box reaches the right end side of the container
+        </script>
+    </body>
+    </html>
