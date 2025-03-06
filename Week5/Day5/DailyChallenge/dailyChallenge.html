@@ -1,0 +1,36 @@
+<!-- Create a form with two fields (name, last name) and a submit button.
+When you click the Send button, retrieve the data from the inputs, and append it on the DOM as a JSON string. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method = "POST" action = "dailyChallenge.html">
+        <label for = "firstname"></label>
+        <input id = "firstname" type = "text" name = "firstname">
+        <label for = "lastname"></label>
+        <input id = "lastname" type = "text" name = "lastname">
+        <button id = "btn" type = "submit">Send</button>
+    </form>
+    <script>
+        let btn = document.getElementById("btn");
+        let firstName = document.getElementById("firstname");
+        let lastName = document.getElementById("lastname");
+        btn.addEventListener("click", function(event){
+            event.preventDefault();
+
+            const newDiv = document.createElement("div");
+            const name = {
+                "firstname": firstName.value,
+                "lastname": lastName.value
+            };
+            newDiv.innerText = JSON.stringify(name);
+            document.body.appendChild(newDiv);
+        });
+    </script>
+</body>
+</html>

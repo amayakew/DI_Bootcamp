@@ -1,0 +1,31 @@
+<!-- 🌟 Exercise 1 -->
+
+<!-- Create a form like the one above. The form should contain three inputs:
+a small text input asking for a name,
+a larger textarea input to write a message,
+a submit input (“Send”)
+
+When you click the Send button, the form will be submitted with a GET method. 
+(you can use the same HTML file for the action url)
+Where will the sent data appear? -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method = "GET" action = "exercise1.html">
+        <p>Name<br><input type = "text" name = "name"></p>
+        <p>Comments<br><textarea name = "comments"></textarea></p>
+        <p><button type = "submit">Send</button></p>
+    </form>
+</body>
+</html>
+
+<!-- The sent data will be added to URL end of the same page as query pairs -->
+
+<!-- 🌟 Exercise 2 -->
+<!-- If method in form will be POST, the data will be stored in the request body, we can see it in DevTools\Network and click on the file-->
