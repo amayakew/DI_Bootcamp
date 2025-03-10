@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    padding: 1em;
+    background-color: #79e570;
+}
+
+#main {
+    min-height: 100vh;
+    background-image: url(./images/circuit-pattern.png);
+    background-color: #322a61;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    padding: 3em 5em;
+}
+
+.headerTitle {
+    font-family: 'SEGA LOGO FONT', sans-serif;
+    font-weight: normal;
+    font-size: 1.7em;
+    color: #322a61;
+    margin: 0;
+}
+
+.searchContainer {
+    width: 100%;
+    padding: 0.7em 0;
+    background-image: url(./images/circuit-pattern.png);
+}
+
+.pageSearch {
+    width: 60%;
+    height: 1.7em;
+    border: 0.2em solid #6c63a2;
+    border-radius: 0.3em;
+    background-color: #ecebf3;
+    outline: none;
+    padding-left: 1em;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.card {
+    width: 16em;
+    height: 20em;
+    background-image: url(./images/card-pattern.png);
+    background-color: #41cddf;
+    border-radius: 0.7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 1em;
+}
+
+.img {
+    width: 80%;
+    background-color: #322a61;
+    border: 1px solid #151229;
+    border-radius: 7em;
+}
+
+.info {
+    align-self: flex-start;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.name {
+    color: #151229;
+    margin-bottom: 0;
+}
+
+.username {
+    margin: 0;
+}
+
+.email {
+    font-size: 0.8em;
+}
