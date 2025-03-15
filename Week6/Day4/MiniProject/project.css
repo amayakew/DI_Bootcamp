@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'StarWars'; 
+    src: url('./img_and_font/font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+}
+
+#mainWrap {
+    min-height: 100vh;
+    background-image: url(https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+#infoContainer {
+    width: 40%;
+    height: 35vh;
+    border: 0.2em solid yellow;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+#findBtn {
+    font-weight: 700;
+    font-size: 1.2em;
+    border: 0.2em solid yellow;
+    border-radius: 0.5em;
+    padding: 0.4em 1em;
+}
+
+.mainHeading {
+    font-family: 'StarWars';
+    font-size: 5em;
+    color: yellow;
+    margin: 0;
+}
+
+.name, .info, .icon {
+    color: white;
+}
+
+.name {
+    font-size: 2em;
+    margin: 0;
+}
+
+.info {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.icon {
+    font-size: 5em;
+}
+
+.loading {
+    padding-top: 0.8em;
+}
