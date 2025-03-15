@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: 'Chivo Mono', sans-serif;
+}
+
+#mainWrap {
+    min-height: 100vh;
+    background-image: url(./images/wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5em;
+}
+
+.exchangeWrap {
+    width: 50%;
+    padding: 2em;
+    background-color: rgba(200,196,220,0.7);
+}
+
+.heading {
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 1em;;
+}
+
+.exchangeForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    font-weight: bold;
+}
+
+input {
+    width: 20em;
+    height: 1.5em;
+    font-weight: 700;
+}
+
+.buttons {
+    display: flex;
+    gap: 1em;
+}
+
+#convertbtn, #changeBtn {
+    font-weight: bold;
+}
+
+#convertbtn:hover, #changeBtn:hover {
+    transform: scale(1.1);
+    background-color: #918ab9;
+}
+
+.changeImg {
+    width: 2em;
+    height: auto;
+}
