@@ -1,0 +1,15 @@
+{
+  "name": "dailychallenge",
+  "version": "1.0.0",
+  "description": "daily challenge week7 day1",
+  "license": "ISC",
+  "author": "Anastasiya",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1"
+  }
+}
