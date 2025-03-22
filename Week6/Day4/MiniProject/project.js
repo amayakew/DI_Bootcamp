@@ -55,8 +55,11 @@ const findBtn = document.getElementById('findBtn');
 findBtn.addEventListener('click', async function() {
     clearInfo();
     addLoading();
+    
+    let randomCharacter;
+
     try {
-        const randomCharacter = await getRandomCharacter();
+        randomCharacter = await getRandomCharacter();
     } catch {
         clearInfo();
         const error = document.createElement('p');
