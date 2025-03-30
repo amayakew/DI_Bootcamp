@@ -18,7 +18,7 @@ function App() {
     <>
       <h1>Vote your language!</h1>
       <div id="langContainer">
-        {languages.map((lang, index) => (
+        {languages && languages.map((lang, index) => (
           <div key={lang.name} className='lang'><span>{lang.votes}</span><span className='langname'>{lang.name}</span><button type='button' onClick={() => updateVotes(index)} className='btn'>Click Here</button></div>
         ))}
       </div>
