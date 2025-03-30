@@ -1,0 +1,27 @@
+form {
+    background-color: burlywood;
+    width: 100vw;
+    padding: 10px;
+    color: black;
+}
+
+.textInput {
+    width: 50%;
+    font-weight: bold;
+    border: 1.5px solid black;
+    padding: 5px;
+}
+
+.smallHeading, .selectInput {
+    font-weight: bold;
+}
+
+.checkboxOption {
+    margin-left: 20px;
+}
+
+.submitBtn {
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 16px;
+}
