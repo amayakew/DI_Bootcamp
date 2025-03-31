@@ -1,0 +1,10 @@
+#root {
+  width: 100vw;
+}
+
+.mainWrap {
+  display:flex;
+  flex-direction: column;
+  padding-left: 200px;
+  padding-top: 10px;
+}
