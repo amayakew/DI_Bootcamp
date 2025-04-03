@@ -1,0 +1,23 @@
+.light, .dark {
+    padding: 300px 150px;
+  }
+  
+  .light {
+    background-color: beige;
+    color: #241201;
+  }
+  
+  .dark {
+    background-color: #241201;
+    color: beige;
+  }
+  
+  h1 {
+    margin-top: 0;
+  }
+  
+  button {
+    background-color: #ae8b68;
+    color: #241201;
+    font-weight: bold;
+  }
