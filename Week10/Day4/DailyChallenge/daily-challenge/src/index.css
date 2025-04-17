@@ -1,0 +1,127 @@
+body {
+  background-color: lightcyan;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.noTasksText {
+  padding: 3em;
+}
+
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding: 2em;
+  padding-top: 0.5em;
+}
+
+.taskWrap {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskInfo {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.taskInfo input {
+  width: 17px;
+  height: 17px;
+  accent-color: #90C8BD;
+  cursor: pointer;
+}
+
+.taskButtons, .editCategoryButtons {
+  display: flex;
+  gap: 0.6em;
+  align-items: center;
+}
+
+.taskButton, .addTaskButton {
+  background-color: #90C8BD;
+  border: solid 2px transparent;
+  border-radius: 0.2em;
+  padding: 0.3em 0.5em;
+}
+
+.taskButton:hover, .editTaskButton:hover, .editCategoryButtons button:hover {
+  border: solid 2px black;
+}
+
+.editTaskContainer {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  gap: 0.8em;
+  align-items: center;
+}
+
+.editInputWrap {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.editInputWrap input {
+  height: 1.21em;
+  border: solid 2px #90C8BD;
+}
+
+.editInputWrap select {
+  width: 30%;
+  height: 1.6em;
+  border: solid 2px #90C8BD;
+}
+
+.editTaskButton, .categoryWrap button, .editCategoryWrap button {
+  border: solid 2px transparent;
+  background-color: #90C8BD;
+  border-radius: 0.2em;
+  padding: 0 0.2em;
+}
+
+.addTaskWrap, .filterWrap {
+  display: flex;
+  justify-content: center;
+  gap: 0.8em;
+}
+
+.addTaskWrap input, .editCategoryWrap input, .categoryWrap button:hover {
+  border: solid 2px #90C8BD;
+}
+
+.addTaskButton {
+  font-weight: bold;
+}
+
+.filterWrap, .editCategoryWrap {
+  padding-top: 1em;
+}
+
+.filterWrap select {
+  height: 2em;
+  border: solid 2px #90C8BD;
+}
+
+.categoryWrap, .editCategoryWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.categoryWrap button {
+  height: 1.6em;
+  background-color: transparent;
+  border: solid 2px #90C8BD;
+}
+
+.categoryWrap button, .addTaskButton:hover {
+  border: solid 2px black;
+}
