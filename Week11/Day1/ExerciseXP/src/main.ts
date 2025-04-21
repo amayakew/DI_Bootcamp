@@ -127,13 +127,6 @@ console.log(undefinedAction);
 // Overloaded function
 // function greeting(): string;
 // function greeting(name: string): string;
-// function greeting(name?: string): string {
-//     if (name) {
-//         return `Hi, ${name}, glad to see you again!`;
-//     }
-//     return `Hello, my friend. Nice to meet you! `
-// };
-
 
 const greeting = (name?: string): string => {
     if (name) {
