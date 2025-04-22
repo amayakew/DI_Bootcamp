@@ -25,12 +25,16 @@ class Library {
     this.books.push(book);
   };
 
-  getBookDetails(isbn: string): Book | undefined {
-    return this.books.find(book => book.isbn === isbn);
+  getBookDetails(isbn: string): string {
+    const book = this.books.find(b => b.isbn === isbn);
+    if(book) {
+      return `${book.title} by ${book.author} was published ${book.publishedYear}. Genre: ${book.genre || 'Not specified'}`;
+    }
+    return 'Book is not found';
   };
 
-  getBooks(){
-    return this.books;
+  getBooks(): Book[]{
+    return [...this.books];
   };
 };
 
