@@ -55,6 +55,7 @@ const Home: React.FC = () => {
         <Typography color="error">{error}</Typography>
       ) : (
         <Box sx={{ mt: 2, display: 'flex', flexDirection: 'column', gap: 2 }}>
+          {!filteredStories?.length ? <Typography>No stories</Typography> : <></>}
           {filteredStories.map((story) => (
             <Card key={story.id} onClick={() => navigate(`/stories/${story.id}`)} sx={{ cursor: 'pointer' }}>
               <CardContent>

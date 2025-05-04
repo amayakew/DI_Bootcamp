@@ -5,10 +5,6 @@ export const getAllStories = async (req,res) => {
     
     try {
         const stories = await getStories();
-        if (stories.length === 0) {
-            res.status(404).json({ message: 'There are no stories here' });
-            return;
-        }
         res.status(200).json({ stories: stories.map((s => ({
             id: s.id,
             title: s.title,
