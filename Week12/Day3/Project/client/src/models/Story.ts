@@ -1,5 +1,4 @@
 import { Contributor } from "./Contributor";
-import { User } from "./User";
 
 
 export type Story = {

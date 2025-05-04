@@ -40,7 +40,7 @@ export const fetchContributorsById = createAsyncThunk(
         catch (error: any) {
             if (error?.response?.status === 403) {
                 // try to refresh token
-                const result = await dispatch(refreshToken());
+                await dispatch(refreshToken());
                 const newToken = (getState() as RootState).auth.authToken;
                 try {
                     const response = await axios.get(`${API_URL}/api/contributors/${storyId}`, {
@@ -71,7 +71,7 @@ export const fetchStories = createAsyncThunk<{stories: Story[]}, void, { state: 
       } catch (error: any) {
         if (error.response?.status === 403) {
             // try to refresh token
-            const result = await dispatch(refreshToken());
+            await dispatch(refreshToken());
             const newToken = getState().auth.authToken;
             try {
                 const response = await axios.get(`${API_URL}/api/stories`, {
