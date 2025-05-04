@@ -6,11 +6,14 @@ import store from './app/store.ts';
 
 import './index.css'
 import App from './App.tsx'
+import { ThemeToggleProvider } from './app/theme/ThemeContext.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeToggleProvider>
+        <App />
+      </ThemeToggleProvider>
     </Provider>
   </StrictMode>,
 )

@@ -11,15 +11,24 @@ import {
   Checkbox,
   Card,
   CardContent,
+  Theme,
+  useTheme,
+  Tooltip,
+  IconButton,
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store';
+import { useThemeToggle } from '../theme/ThemeContext';
+import { Brightness7, Brightness4 } from '@mui/icons-material';
 
 const Home: React.FC = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch<AppDispatch>();
     const {error, loading, data} = useSelector((state: RootState) => state.stories);
     const {user} = useSelector((state: RootState) => state.auth);
+
+    const theme: Theme = useTheme();
+    const toggleTheme = useThemeToggle();
 
   const [showOnlyMine, setShowOnlyMine] = useState(false);
 
@@ -33,10 +42,14 @@ const Home: React.FC = () => {
 
   return (
     <Container maxWidth="md" sx={{ mt: 4 }}>
+      <Tooltip title="Toggle light/dark theme">
+        <IconButton onClick={toggleTheme} color="inherit">
+          {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+        </IconButton>
+      </Tooltip>
       <Typography variant="h4" gutterBottom>
         Hello, {user?.username}
       </Typography>
-
       <FormControlLabel
         control={
           <Checkbox
