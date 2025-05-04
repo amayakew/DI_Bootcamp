@@ -63,7 +63,7 @@ export const loginUser = async(req,res) => {
             { expiresIn: "7d" },
         )
 
-        res.cookie("refreshToken", refreshToken, { httpOnly: true, secure: false, sameSite: false });
+        res.cookie("refreshToken", refreshToken, { httpOnly: true, secure: process.env.DISABLE_SECURE == 'true' ? false : true, sameSite: "None" });
         res.json({ token: accessToken, user: {
             userId: user.id,
             username: user.username,
