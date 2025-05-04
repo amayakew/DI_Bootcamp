@@ -82,3 +82,5 @@ This project consists of two parts: a **client** (frontend) and a **server** (ba
 ## ✅ Done
 
 Your client should now be running at `http://localhost:5173` (or similar), and your server at `http://localhost:3001`.
+
+Link to website demo: `https://storytellingfront.onrender.com`.
