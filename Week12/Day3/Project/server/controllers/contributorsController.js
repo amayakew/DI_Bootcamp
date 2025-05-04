@@ -3,7 +3,6 @@ import { addContributor, getStoryContributors, deleteContributor } from "../mode
 export const addNewContributor = async (req,res) => {
     const {user_id, story_id} = req.body;
 
-
     if (!user_id || !story_id) {
         return res.status(400).json({ message: 'User and story IDs are required.' })
     };
@@ -17,7 +16,7 @@ export const addNewContributor = async (req,res) => {
         };
 
         const contributor = await addContributor(user_id,story_id);
-        res.status(201).json({message: 'New contributor is added successfully', contributor})
+        res.status(201).json({message: 'New contributor was added successfully', contributor})
     } catch (e) {
         console.log((e));
         res.status(500).json({message: 'Server error, please try again later.'})
@@ -44,7 +43,7 @@ export const deleteStoryContributor = async(req,res) => {
 
     try {
         const contributor = await deleteContributor(id);
-        res.status(200).json({message: `Contributor with id ${storyId} is successfully deleted`, contributor})
+        res.status(200).json({message: `Contributor with id ${storyId} was successfully deleted`, contributor})
     } catch (e) {
         console.log((e));
         res.status(500).json({message: 'Server error, please try again later.'})

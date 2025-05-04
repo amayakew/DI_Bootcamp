@@ -24,13 +24,13 @@ export const registerUser = async (req,res) => {
 export const loginUser = async(req,res) => {
     const {email, password} = req.body;
     if (!email || !password) {
-        return res.status(400).json({ message: "All fields are required." })
+        return res.status(400).json({ message: "Email and password are required." })
     };
 
     try {
         const user = await getUserByEmail(email);
         if(!user) {
-            res.status(404).json({message: 'User not found'});
+            res.status(404).json({message: 'User is not found'});
             return;  
         };
 
@@ -50,7 +50,7 @@ export const loginUser = async(req,res) => {
                 email: user.email,
             },
             JWT_SECRET,
-            { expiresIn: '15d' }
+            { expiresIn: '15m' }
         );
 
         const refreshToken = jwt.sign(
@@ -80,6 +80,7 @@ export const refreshAccessToken = (req, res) => {
     const refreshToken = req.cookies?.refreshToken
 
     if (!refreshToken) return res.sendStatus(403);
+    
     const REFRESH_SECRET = process.env.REFRESH_SECRET;
     const JWT_SECRET = process.env.JWT_SECRET;
 

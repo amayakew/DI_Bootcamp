@@ -6,7 +6,7 @@ export const getAllStories = async (req,res) => {
     try {
         const stories = await getStories();
         if (stories.length === 0) {
-            res.status(404).json({ message: 'No stories found' });
+            res.status(404).json({ message: 'There are no stories here' });
             return;
         }
         res.status(200).json({ stories: stories.map((s => ({
@@ -36,7 +36,7 @@ export const createStory = async (req,res) => {
 
     try {
         const story = await createNewStory(title,content,authorId);
-        res.status(201).json({message: 'New story is added successfully', story})
+        res.status(201).json({message: 'New story was successfully added', story})
     } catch (e) {
         console.log((e));
         res.status(500).json({message: 'Server error, please try again later.'})
@@ -45,16 +45,18 @@ export const createStory = async (req,res) => {
 
 export const updateStory = async (req,res) => {
     const storyId = req.params.id;
+
     const story = await getStoryById(storyId)
     if (!story) {
         res.status(404).json({ message: 'No stories found' });
         return;
     };
+
     const {title, content} = req.body;
 
     try {
         const story = await updateStoryModelFunc(title, content, storyId);
-        res.status(200).json({message: `Story with id ${storyId} is successfully updated`, story})
+        res.status(200).json({message: `Story with id ${storyId} was successfully updated`, story})
     } catch (e) {
         console.log((e));
         res.status(500).json({message: 'Server error, please try again later.'})
@@ -71,7 +73,7 @@ export const deleteStory = async(req,res) => {
 
     try {
         const story = await deleteStoryModelFunc(storyId);
-        res.status(200).json({message: `Story with id ${storyId} is successfully deleted`, story})
+        res.status(200).json({message: `Story with id ${storyId} was successfully deleted`, story})
     } catch (e) {
         console.log((e));
         res.status(500).json({message: 'Server error, please try again later.'})
